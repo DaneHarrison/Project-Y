@@ -1,3 +1,0 @@
-class LEDGrid :: public Display{
-
-};

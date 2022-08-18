@@ -1,1 +1,4 @@
 classes.txt
+.vscode/*
+build/*
+tests/catch.hpp
