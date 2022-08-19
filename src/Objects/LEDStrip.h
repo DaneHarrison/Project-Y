@@ -1,14 +1,20 @@
 #pragma once
 #include "../Interfaces/LEDDisplay.h"
-//#include "LED.h"
+class LED;
 
 class LEDStrip : public LEDDisplay {
 private:
-    //LED leds[];
+    int length;
+    LED *leds[];
 
 public:
-    LEDStrip(int);
-    void turnOff();
-    void updateDisplay(LEDDisplay*);
+    LEDStrip();
+    void init(int, int);
+
     LEDDisplay* getDisplay();
+
+    void turnOff();
+    void updateLED(int, int, LED);
+    void updateLEDSRange(int, int, LED);
+    void updateDisplay(LEDDisplay*);
 };

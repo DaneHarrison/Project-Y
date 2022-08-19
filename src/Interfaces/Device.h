@@ -6,7 +6,7 @@ class AudioInput;
 class Device {
 private:
     LEDDisplay *display;
-    AudioInput *input;
+    int audioInput;
     
 public:
     virtual void start() = 0;

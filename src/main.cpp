@@ -1,15 +1,12 @@
-#include "Objects/MicInput.h"
-#include "Objects/LEDGrid.h"
 #include "Arduino/Arduino.h"
-#include <iostream>
-using namespace std;
+#include "Objects/LEDGrid.h"
+
 
 void main() {
-    AudioInput *input = new AudioInput();
-    LEDGrid *display = new LEDGrid();
     Arduino *device = new Arduino();
+    LEDGrid *display = new LEDGrid();
+    
 
-    device->setAudioInput(input);
     device->setLEDDisplay(display);
     device->start();
 }

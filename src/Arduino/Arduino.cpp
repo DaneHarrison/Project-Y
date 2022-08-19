@@ -10,7 +10,8 @@ void Arduino::start() {
     
     while(true) {
         //this->input->listen();
-        //this->display->updateDisplay(visualizer.process(audio))
+        //visualizer ->(pass audio into logic)
+        //this->display->updateDisplay(visualizer.process())
     }
 }
 

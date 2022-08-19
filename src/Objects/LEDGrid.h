@@ -1,14 +1,22 @@
 #pragma once
 #include "../Interfaces/LEDDisplay.h"
+class LED;
 
 class LEDGrid : public LEDDisplay {
 private:
-    //matrix of size n by m
+    int rows;
+    int cols;
+    LED **grid;
     
 public:
     LEDGrid();
-    LEDGrid(int, int);
-    void turnOff();
-    void updateDisplay(LEDDisplay*);
+    void init(int, int);
+    
     LEDDisplay* getDisplay();
+
+    void turnOff();
+    void updateLED(int, int, LED);
+    void updateRow(int, LED);
+    void updateRow(int, LEDDisplay*);
+    void updateDisplay(LEDDisplay*);
 };

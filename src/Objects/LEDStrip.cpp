@@ -1,6 +1,6 @@
 #include "LEDStrip.h"
 
-LEDStrip::LEDStrip(int a) {
+LEDStrip::LEDStrip() {
 
 }
     
