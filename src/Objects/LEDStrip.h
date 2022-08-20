@@ -1,6 +1,7 @@
 #pragma once
-#include "../Interfaces/LEDDisplay.h"
 class LED;
+
+#include "../Interfaces/LEDDisplay.h"
 
 class LEDStrip : public LEDDisplay {
 private:
@@ -8,13 +9,13 @@ private:
     LED *leds[];
 
 public:
-    LEDStrip();
-    void init(int, int);
+    LEDStrip(int);
 
     LEDDisplay* getDisplay();
 
-    void turnOff();
-    void updateLED(int, int, LED);
-    void updateLEDSRange(int, int, LED);
-    void updateDisplay(LEDDisplay*);
+    void turnOff(); //sets all LEDs to 0
+    void updateLED(int, int, LED); //updates an individually spec /lED
+    void updateLEDRange(int, int, int, LED); //updates a range of LEDs x, start y, enf y
+    void copyDisplayElement(int, int); //copies an LED element to another LED
+    void updateDisplay(LEDDisplay*); //Lets you completley override
 };

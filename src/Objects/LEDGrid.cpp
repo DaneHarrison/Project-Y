@@ -1,10 +1,6 @@
 #include "LEDGrid.h"
 
-LEDGrid::LEDGrid(int a, int b) {
-
-}
-
-LEDGrid::LEDGrid() {
+LEDGrid::LEDGrid(int rows, int cols) {
 
 }
     

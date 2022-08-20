@@ -1,5 +1,5 @@
 #pragma once
 
-class FTTReader {
+class FTTReader { //these can be in some of the patterns
 
 };

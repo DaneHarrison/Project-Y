@@ -1,12 +1,19 @@
+#include "Logic/VisualizerLogic.h"
+#include "Interfaces/LEDDisplay.h"
 #include "Arduino/Arduino.h"
-#include "Objects/LEDGrid.h"
 
 
 void main() {
-    Arduino *device = new Arduino();
-    LEDGrid *display = new LEDGrid();
-    
+    VisualizerLogic *visualizer = new VisualizerLogic();
+    Device *device = new Arduino();
+    LEDDisplay *display;
+    int audio;
 
-    device->setLEDDisplay(display);
-    device->start();
+    visualizer->init(device->getDisplayWidth(), device->getDisplayHeight());
+
+    while(true) {
+        audio = device->listen();   
+        display = visualizer->process(audio);
+        device->updateLEDDisplay(display);
+    }
 }

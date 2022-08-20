@@ -1,15 +1,10 @@
-//template pattern, dependency inversion
 #pragma once
 class LEDDisplay;
-class AudioInput;
 
 class Device {
-private:
-    LEDDisplay *display;
-    int audioInput;
-    
 public:
-    virtual void start() = 0;
-    virtual void setLEDDisplay(LEDDisplay*); //needs a display -> has the LED strips (array of strips -> array of leds)
-    virtual void setAudioInput(AudioInput*); //needs a mic
+    virtual int listen() = 0;
+    virtual int getDisplayWidth() = 0;
+    virtual int getDisplayHeight() = 0;
+    virtual void updateLEDDisplay(LEDDisplay*) = 0;
 };  

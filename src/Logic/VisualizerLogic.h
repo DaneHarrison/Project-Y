@@ -1,8 +1,15 @@
 #pragma once
+class PatternStrategy;
+class LEDDisplay;
 
 class VisualizerLogic {
-//array of patterns
-//randommly choose which one
-//each pattern will have a min and max time (will be randomized each time)
-//each pattern will 
+private:
+    PatternStrategy *selected; //eventually change to a manager
+    LEDDisplay *currDisplay;
+    int rows;
+    int cols;
+
+public:
+    void init(int, int);
+    LEDDisplay *process(int);
 };

@@ -15,8 +15,16 @@ Dane (6 hrs)
 - updated docs
 - got tests and project executables functional!
 
+August 19:
+Dane () - 3 hours
+- Finished setting up common interfaces
+- Furthered my understanding of cmake and cleaned up my cmake files
+- Setup testing for LED
+- Started TDD with LEDStrip
+- Started TDD with LEDGrid
+
+
 <br>
 <br>
 
 TODO:
-- probably need to review my cmake files and clean them up

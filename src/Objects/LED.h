@@ -16,6 +16,8 @@ public:
     static const int MIN_VALUE = 0;     //Lowest valid RGB value (black)
     static const int MAX_VALUE = 255;   //Largest valid RGB value (white)
 
+    LED();
+
     int getRed();
     int getGreen();
     int getBlue();

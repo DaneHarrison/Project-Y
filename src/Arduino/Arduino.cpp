@@ -1,24 +1,22 @@
 #include "Arduino.h"
-#include "../Objects/MicInput.h"
-#include "../Logic/VisualizerLogic.h"
-#include <iostream>
-using namespace std;
+#include "../Objects/LEDGrid.h"
+#include "../Objects/LEDStrip.h"
 
-void Arduino::start() {
-    cout << "hi";
-    //VisualizerLogic visualizer = new VisualizerLogic();
-    
-    while(true) {
-        //this->input->listen();
-        //visualizer ->(pass audio into logic)
-        //this->display->updateDisplay(visualizer.process())
-    }
+const int Arduino::MIC_PIN = 5;
+const int Arduino::DISPLAY_PIN = 5;
+const int Arduino::DISPLAY_WIDTH = 5;
+const int Arduino::DISPLAY_HEIGHT = 5;
+
+int Arduino::listen() {
+    return 100;
 }
 
-void Device::setAudioInput(AudioInput* currInput) {
-    this->input = currInput;
+int Arduino::getDisplayWidth() {
+    return Arduino::DISPLAY_WIDTH;
 }
 
-void Device::setLEDDisplay(LEDDisplay* currDisplay) {
-    this->display = currDisplay;
+int Arduino::getDisplayHeight() {
+    return Arduino::DISPLAY_HEIGHT;
 }
+
+void Arduino::updateLEDDisplay(LEDDisplay*) {}

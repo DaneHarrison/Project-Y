@@ -1,6 +1,7 @@
 #pragma once
-#include "../Interfaces/LEDDisplay.h"
 class LED;
+
+#include "../Interfaces/LEDDisplay.h"
 
 class LEDGrid : public LEDDisplay {
 private:
@@ -9,14 +10,13 @@ private:
     LED **grid;
     
 public:
-    LEDGrid();
-    void init(int, int);
+    LEDGrid(int, int);
     
     LEDDisplay* getDisplay();
 
     void turnOff();
     void updateLED(int, int, LED);
-    void updateRow(int, LED);
-    void updateRow(int, LEDDisplay*);
+    void updateLEDRange(int, int, int, LED);
+    void copyDisplayElement(int, int);
     void updateDisplay(LEDDisplay*);
 };

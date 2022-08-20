@@ -1,5 +1,14 @@
 #include "LED.h"
 
+bool validColor(int);
+int normalizeColor(int);
+
+LED::LED() {
+    this->red = 0;
+    this->green = 0;
+    this->blue = 0;
+}
+
 int LED::getRed() {
     return this->red;
 }
@@ -54,7 +63,7 @@ int normalizeColor(int extremeVal) {
     int normalizedVal = LED::MIN_VALUE;
 
     if(extremeVal > LED::MAX_VALUE) {
-        normalizedVal == LED::MAX_VALUE;
+        normalizedVal = LED::MAX_VALUE;
     }
 
     return normalizedVal;
