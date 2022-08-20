@@ -1,4 +1,5 @@
 #include "../../src/Objects/LEDStrip.h"
+#include "../../src/Objects/LED.h"
 #include "../catch.hpp"
 
 TEST_CASE("Basic LEDStrip test cases") {

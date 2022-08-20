@@ -6,16 +6,17 @@ class LED;
 class LEDStrip : public LEDDisplay {
 private:
     int length;
-    LED *leds[];
+    LED ***strip;
 
 public:
     LEDStrip(int);
+    ~LEDStrip();
 
-    LEDDisplay* getDisplay();
+    LED ***getDisplay();
 
     void turnOff(); //sets all LEDs to 0
-    void updateLED(int, int, LED); //updates an individually spec /lED
-    void updateLEDRange(int, int, int, LED); //updates a range of LEDs x, start y, enf y
+    void updateLEDs(int, int, LED*); //updates an individually spec /lED
+    void updateLEDRange(int, int, int, LED*); //updates a range of LEDs x, start y, enf y
     void copyDisplayElement(int, int); //copies an LED element to another LED
-    void updateDisplay(LEDDisplay*); //Lets you completley override
+    void updateDisplay(int, int, LED***); //Lets you completley override
 };

@@ -16,12 +16,15 @@ Dane (6 hrs)
 - got tests and project executables functional!
 
 August 19:
-Dane () - 3 hours
+Dane (7 hrs)
 - Finished setting up common interfaces
 - Furthered my understanding of cmake and cleaned up my cmake files
 - Setup testing for LED
-- Started TDD with LEDStrip
+- Adjusted LED Display interface (added more pointers and a deconstructor)
 - Started TDD with LEDGrid
+- Learnt dynamically calculating array length is not easy in C++ - cannot use sizeof (since LED is not primitive) maybe this can be changed to use templates in the future (if this approach is taken lengths must be known at compile time)
+- Wrote a few tests and some of the more basic LEDGrid functionality
+- Learnt functions that are not declared in the header file (only .cpp) cannot access class parts i.e private variables
 
 
 <br>
