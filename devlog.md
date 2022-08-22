@@ -26,8 +26,37 @@ Dane (7 hrs)
 - Wrote a few tests and some of the more basic LEDGrid functionality
 - Learnt functions that are not declared in the header file (only .cpp) cannot access class parts i.e private variables
 
+August 21:
+Dane (3 hrs)
+- Created a static lilac pattern
+- Fleshed out the arduino device class - added arduino dependent code
+- Created a minimal version of VisualizerLogic (future versions will randomize patterns and track them as well)
+- Started relearning how to use CAD software
+- Added some documentation
+- Learnt that adding comments directly above a class/function/variable will provide a brief description in vs code (forward referencing messes with classes though)
+
+August 22:
+Dane (2 hrs)
+- Improved documentation
+- Adding documentation helps detect duplicate code!
 
 <br>
 <br>
 
-TODO:
+//TODO:
+
+    System:
+    - Figure out how to make cmake and arduino compilations compatible
+    - optimize cmake file (currently we do not use private which might be needed for easier testing - double check)
+     
+    LEDDisplay:
+    - Move LED*** from child classes to parent
+    - remove duplicate code in strip and grid by moving instances to abstract LEDDisplay (turnOff, getDisplay, probably more!)
+
+    LED:
+    - LED copy constructor
+
+    VisualizerLogic:
+    - add the ability to add multiple patterns (can use arrays qith modulo, dependency injection, constants etc...)
+    - add pattern range times (random between min and max)
+    - add random pattern selection/pattern management logic

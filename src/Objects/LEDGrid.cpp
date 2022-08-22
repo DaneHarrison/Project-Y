@@ -61,6 +61,7 @@ void LEDGrid::updateDisplay(int numRows, int numCols, LED ***newDisplay) {
                 red = newDisplay[i][j]->getRed();
                 green = newDisplay[i][j]->getGreen();
                 blue = newDisplay[i][j]->getBlue();
+                
                 this->grid[i][j]->setRGB(red, green, blue);
             }
         }

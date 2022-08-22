@@ -7,18 +7,18 @@ VisualizerLogic::VisualizerLogic() {
     this->selected = new FillLilacPattern();
 }
 
-void VisualizerLogic::setSize(int rows, int cols) {
-    if(cols == 0) { //Abstract Factory for LEDDisplays
-        this->currDisplay = new LEDStrip(rows);
+void VisualizerLogic::setSize(int height, int width) {
+    if(width == 0) {
+        this->currDisplay = new LEDStrip(height);
     }
     else {
-        this->currDisplay = new LEDGrid(rows, cols);
+        this->currDisplay = new LEDGrid(height, width);
     }
 
-    this->rows = rows;
-    this->cols = cols;
+    this->height = height;
+    this->width = width;
 }
 
-LED ***VisualizerLogic::process(int frequency) { //can add randomization into this - can be selected 
-    return this->selected->usePattern(this->rows, this->cols, frequency, this->currDisplay);
+LED ***VisualizerLogic::process(int frequency) {
+    return this->selected->usePattern(this->height, this->width, frequency, this->currDisplay);
 }
