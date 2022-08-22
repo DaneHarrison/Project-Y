@@ -1,7 +1,5 @@
 #include "LEDGrid.h"
 #include "LED.h"
-#include <iostream>
-using namespace std;
 
 bool validSize(int, int, int, int);
 bool validEntries(int, int, LED***);

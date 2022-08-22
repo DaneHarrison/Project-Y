@@ -2,8 +2,6 @@
 //
 //
 #pragma once
-class LEDDisplay;
-
 #include "../Interfaces/Device.h"
 
 class Arduino : public Device {
@@ -14,8 +12,9 @@ private:
     static const int DISPLAY_HEIGHT;
 
 public:
+    Arduino();
     int listen();
     int getDisplayWidth();
     int getDisplayHeight();
-    void updateLEDDisplay(LEDDisplay*);
+    void updateLEDDisplay(LED***);
 };

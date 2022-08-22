@@ -1,6 +1,7 @@
 #pragma once
 class PatternStrategy;
 class LEDDisplay;
+class LED;
 
 class VisualizerLogic {
 private:
@@ -10,6 +11,7 @@ private:
     int cols;
 
 public:
-    void init(int, int);
-    LEDDisplay *process(int);
+    VisualizerLogic();
+    void setSize(int, int);
+    LED ***process(int);
 };

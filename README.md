@@ -16,19 +16,20 @@ Project Y is a wearable display shirt that lights up according to audio frequenc
 # Development roadmap
 ## Phase 1:
 1. <strike>Figure out unit testing in C++</strike>
-2. Static equalizer pattern
-3. Bare minimum code implementation 
-4. 3D model a basic pitch -> skirt, shirt -> animations
-5. Requirement analysis - hardware, safety precautions
+2. <strike>Bare minimum code implementation</strike>
+3. <strike>Static pattern</strike>
+4. Add documentation for current plans
+5. 3D model a basic pitch -> skirt, shirt -> animations
+6. Requirement analysis - hardware, safety precautions
 
 ## Phase 2:
-6. Distribute frequencies over LED vectors
-7. Analyze FTT
-8. Make equalizer pattern reactive
+7. Distribute frequencies over LED vectors
+8. Analyze FTT
+9. Make equalizer pattern reactive
 
 ## Phase 3:
-9. 2x2 pixel grid (integrate subpixels)
-10. sound wave pattern
-11. 3D print case
-12. 3D print holder
-13. Product assembly
+10. 2x2 pixel grid (integrate subpixels)
+11. sound wave pattern
+12. 3D print case
+13. 3D print holder
+14. Product assembly

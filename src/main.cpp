@@ -6,10 +6,10 @@
 void main() {
     VisualizerLogic *visualizer = new VisualizerLogic();
     Device *device = new Arduino();
-    LEDDisplay *display;
+    LED ***display;
     int audio;
 
-    visualizer->init(device->getDisplayWidth(), device->getDisplayHeight());
+    visualizer->setSize(device->getDisplayWidth(), device->getDisplayHeight());
 
     while(true) {
         audio = device->listen();   

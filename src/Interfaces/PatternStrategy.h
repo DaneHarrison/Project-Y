@@ -1,7 +1,8 @@
 #pragma once
 class LEDDisplay;
+class LED;
 
-class PatternStrategy { //can add randomization into this - can be selected 
+class PatternStrategy {
 public:
-    virtual LEDDisplay *usePattern(int, int, int) = 0;
+    virtual LED ***usePattern(int, int, int, LEDDisplay*) = 0;
 };
