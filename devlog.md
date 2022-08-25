@@ -1,11 +1,11 @@
 # Dev Activity: 
-August 6:  
+August 6:    
 Dane (2 hrs)  
 - researched safety risks
 - planned rough code structure
 - researched 3D printing joint techniques
 
-August 17:
+August 17:  
 Dane (6 hrs)
 - Generated rough file structure considering SOLID principles and design patterns
 - Learnt how to reference files in other directories in C++ (uses relative pathing)
@@ -15,7 +15,7 @@ Dane (6 hrs)
 - updated docs
 - got tests and project executables functional!
 
-August 19:
+August 19:  
 Dane (7 hrs)
 - Finished setting up common interfaces
 - Furthered my understanding of cmake and cleaned up my cmake files
@@ -26,7 +26,7 @@ Dane (7 hrs)
 - Wrote a few tests and some of the more basic LEDGrid functionality
 - Learnt functions that are not declared in the header file (only .cpp) cannot access class parts i.e private variables
 
-August 21:
+August 21:  
 Dane (3 hrs)
 - Created a static lilac pattern
 - Fleshed out the arduino device class - added arduino dependent code
@@ -35,10 +35,26 @@ Dane (3 hrs)
 - Added some documentation
 - Learnt that adding comments directly above a class/function/variable will provide a brief description in vs code (forward referencing messes with classes though)
 
-August 22:
+August 22:  
 Dane (2 hrs)
 - Improved documentation
 - Adding documentation helps detect duplicate code!
+
+August 24:  
+Dane (8 hrs)
+- Learnt how to navigate through blender and apply basic operations
+- Learnt how to utilize scripts to automate otherwise tedious tasks
+- Learnt that collection indexs do not match up with order (names are more consistant)
+- Learnt about materials and animation
+- Learnt the importance of setting to scale
+- Learnt arrays suck - does not allow for individual modification (you can seperate them with p in edit mode but this kept causing blender to crash)
+- Created base shirt model
+- Created LEDs
+
+August 25:  
+Dane (3 hrs)
+- Wrote the blender animation script
+- Created readme gif
 
 <br>
 <br>

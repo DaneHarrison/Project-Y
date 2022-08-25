@@ -1,5 +1,6 @@
 # Project-Y
-Project Y is a wearable display shirt that lights up according to audio frequency
+### Project Y is a display shirt that lights up to audio frequency   
+![A shirt that is lighting up to audio frequency](partyShirt.gif)
 
 <br>
 <br>
@@ -19,7 +20,7 @@ Project Y is a wearable display shirt that lights up according to audio frequenc
 2. <strike>Bare minimum code implementation</strike>
 3. <strike>Static pattern</strike>
 4. <strike>Document current pitch</strike>
-5. 3D model a prototype (shirt and animations in Blender)
+5. <strike>3D model a prototype (shirt and animations in Blender)</strike>
 6. Requirement analysis (hardware and safety precautions)
 
 ## Phase 2:
@@ -29,8 +30,8 @@ Project Y is a wearable display shirt that lights up according to audio frequenc
 10. Make reactive equalizer pattern strategy
 
 ## Phase 3:
-11. sound wave pattern
-12. 3D print case
-13. 3D print holder
-14. Product assembly
+11. 3D print case
+12. 3D print holder
+13. Product assembly
+14. sound wave pattern
 15. 2x2 pixel grid (integrate subpixels)
