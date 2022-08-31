@@ -1,6 +1,6 @@
 # Project-Y
 ### Project Y is a display shirt that lights up to audio frequency   
-![A shirt that is lighting up to audio frequency](partyShirt.gif)
+![A shirt that is lighting up to audio frequency](res/partyShirt.gif)
 
 <br>
 <br>

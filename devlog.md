@@ -56,6 +56,14 @@ Dane (3 hrs)
 - Wrote the blender animation script
 - Created readme gif
 
+August 30:  
+Dane (5 hrs)
+- Researched arduino information:
+    - Learnt pin 0 has the best performance in terms of audio processing
+    - Learnt can use less ram by changing all ints to short ints
+- Relearnt onshape
+- Started designing LED strip connectors
+
 <br>
 <br>
 
@@ -64,6 +72,7 @@ Dane (3 hrs)
     System:
     - Figure out how to make cmake and arduino compilations compatible
     - optimize cmake file (currently we do not use private which might be needed for easier testing - double check)
+    - change all instances of int to short int
      
     LEDDisplay:
     - Move LED*** from child classes to parent
