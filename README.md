@@ -21,7 +21,7 @@
 3. <strike>Static pattern</strike>
 4. <strike>Document current pitch</strike>
 5. <strike>3D model a prototype (shirt and animations in Blender)</strike>
-6. Requirement analysis (hardware and safety precautions)
+6. <strike>Requirement analysis (hardware and safety precautions)</strike>
 
 ## Phase 2:
 7. Refactor (see TODO in devlog)
