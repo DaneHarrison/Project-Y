@@ -10,12 +10,13 @@
 <hr>
 
 ## Electricity:
-- An individual LED can use up ot 60 mA
-- needs 42 000 maH for all 700 leds, plus arduino
+- An individual LED can use up ot 60 mA (20mA at most for R, G and B respectively)
+- needs 42 000 maH for all 700 leds, plus arduino (note that its unlikely all LEDs will be in use at a given time)
 - modify a fanny pack for power sources
     - https://www.etsy.com/ca/listing/778196545/ultralight-xpac-lunch-sack-removable
     - https://www.amazon.ca/MAXOAK-50000mAh-Portable-External-Notebook-Most/dp/B00YP823NA is 2520g around 500
     - https://www.adafruit.com/product/1566 getting 100 000kaH is 2120g around 400
+    - https://www.amazon.ca/26800mAh-Ultra-High-Capacity-Universal-LED-Indicator/dp/B0869DMJH7?th=1
 
 
 <br>

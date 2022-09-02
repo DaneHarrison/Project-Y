@@ -64,6 +64,13 @@ Dane (5 hrs)
 - Relearnt onshape
 - Started designing LED strip connectors
 
+September 1:  
+Dane (4 hrs)
+- Researched materials needed to finish the project
+- Researched power solutions
+- Documented research and build plans into res/details.md
+- Created a basic diagram
+
 <br>
 <br>
 
