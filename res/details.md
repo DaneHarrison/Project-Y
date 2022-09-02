@@ -34,6 +34,9 @@
     - wires
     - Heat shrink
     - fabric glue
+    - Arduino enclosure
+    - LED holders - WIP:
+     https://cad.onshape.com/documents/7cdf0f01c05eee288a644d93/w/e2d504740815f5d79b63e882/e/4a51501606627546b0614709?renderMode=0&uiState=63119176058e6c0b820e24d0
 
 <br>
 <hr>

@@ -70,6 +70,7 @@ Dane (4 hrs)
 - Researched power solutions
 - Documented research and build plans into res/details.md
 - Created a basic diagram
+- Adjusted LED holders 3D design to meet dimensions
 
 <br>
 <br>
