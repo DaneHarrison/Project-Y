@@ -5,7 +5,6 @@
 // Manages an LED; access and modify its RBG values inside the range [0, 255]
 // --------------------------------
 #pragma once
-#include "../Interfaces/LEDDisplay.h"
 
 class LED {
 private:

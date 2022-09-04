@@ -12,6 +12,7 @@ set(SOURCE_FILES
 add_executable(${LIBRARY_NAME} ${SOURCE_FILES})
 
 target_link_libraries(${LIBRARY_NAME} LED)
+target_link_libraries(${LIBRARY_NAME} LEDDisplay)
 target_link_libraries(${LIBRARY_NAME} LEDStrip)
 target_link_libraries(${LIBRARY_NAME} LEDGrid)
 target_link_libraries(${LIBRARY_NAME} FTTReader)

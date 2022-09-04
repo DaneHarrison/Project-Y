@@ -72,6 +72,12 @@ Dane (4 hrs)
 - Created a basic diagram
 - Adjusted LED holders 3D design to meet dimensions
 
+September 3:  
+Dane (5 hrs)  
+- Used TDD to develope most of LEDStrip classes (invalid and edge cases remaining)
+- Improved LEDDisplay interface (better encapsulation, DRY and easier to read)
+- Learnt can call delete from constructor but problems arise if instance variables are used or a non default deconstructor is used
+
 <br>
 <br>
 
@@ -81,15 +87,28 @@ Dane (4 hrs)
     - Figure out how to make cmake and arduino compilations compatible
     - optimize cmake file (currently we do not use private which might be needed for easier testing - double check)
     - change all instances of int to short int
-     
-    LEDDisplay:
-    - Move LED*** from child classes to parent
-    - remove duplicate code in strip and grid by moving instances to abstract LEDDisplay (turnOff, getDisplay, probably more!)
-
-    LED:
-    - LED copy constructor
 
     VisualizerLogic:
     - add the ability to add multiple patterns (can use arrays qith modulo, dependency injection, constants etc...)
     - add pattern range times (random between min and max)
     - add random pattern selection/pattern management logic
+
+<br>
+
+# Review
+## Phase 1:
+### Bad:
+- Agile process can be improved - reading books is probably a better idea later on
+- I couldve focused more to improve productivity
+- The topics I struggled with most werent code
+### Good:
+- I enjoyed myself
+- I used test driven development
+- I'm proud of the codes current architecture
+- I documented my code
+- While I wasnt perfectly agile I've improved!
+### Focus area of improvement:
+- Focus more on individual tasks (go down a list)
+
+## Phase 2:
+## Phase 3:

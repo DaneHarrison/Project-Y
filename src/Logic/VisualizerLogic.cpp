@@ -1,24 +1,24 @@
 #include "VisualizerLogic.h"
 #include "../Objects/LEDGrid.h"
 #include "../Objects/LEDStrip.h"
-#include "../Objects/FillLilacPattern.h"
+#include "../Objects/SolidPattern.h"
 
 VisualizerLogic::VisualizerLogic() {
-    this->selected = new FillLilacPattern();
+    this->selected = new SolidPattern();
 }
 
 void VisualizerLogic::setSize(int height, int width) {
-    if(width == 0) {
+    if(width == 1) {
         this->currDisplay = new LEDStrip(height);
     }
     else {
         this->currDisplay = new LEDGrid(height, width);
     }
-
-    this->height = height;
-    this->width = width;
 }
 
 LED ***VisualizerLogic::process(int frequency) {
-    return this->selected->usePattern(this->height, this->width, frequency, this->currDisplay);
+    LED ***newDisplay = this->selected->usePattern(frequency, this->currDisplay);
+    currDisplay->updateDisplay(1, 1, newDisplay); //will need to update
+
+    return this->currDisplay->getDisplay();
 }

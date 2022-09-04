@@ -13,8 +13,6 @@ class VisualizerLogic {
 private:
     PatternStrategy *selected;  //The pattern that is currently responsible for display generation
     LEDDisplay *currDisplay;    //The current display
-    int height;                 //The height of the display
-    int width;                  //The width of the display
 
 public:
     VisualizerLogic();

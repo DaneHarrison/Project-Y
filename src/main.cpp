@@ -2,7 +2,7 @@
 // Powers a wearable LED display shirt that lights up according to audio frequency
 // --------------------------------
 #include "Logic/VisualizerLogic.h"
-#include "Interfaces/LEDDisplay.h"
+#include "Objects/LEDDisplay.h"
 #include "Arduino/Arduino.h"
 
 

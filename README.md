@@ -24,7 +24,7 @@
 6. <strike>Requirement analysis (hardware and safety precautions)</strike>
 
 ## Phase 2:
-7. Refactor (see TODO in devlog)
+7. Refactor and add data validation
 8. Distribute frequencies over LED vectors
 9. Add FTT Analysis
 10. Make reactive equalizer pattern strategy
