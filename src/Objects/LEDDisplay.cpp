@@ -14,16 +14,28 @@ int LEDDisplay::getWidth() {
     return this->width;
 }
 
-// bool validEntries(int height, int width, LED ***newDisplay) {
-//     bool hasValidEntries = newDisplay;
-    
-//     for(int i = 0; i < width && hasValidEntries; i++) {
-//         for(int j = 0; j < height && hasValidEntries; j++) {
-//             if(!newDisplay[i] || !newDisplay[i][j]) {   //check if a pointer is actually nullptr
-//                 hasValidEntries = false;
-//             }
-//         }
-//     }
+bool LEDDisplay::validPosi(int posi, bool checkWidth) {
+    bool isValid;
 
-//     return hasValidEntries;
-// }
+    if(checkWidth) {
+        isValid = posi >= 0 && posi < this->width;
+    }
+    else {
+        isValid = posi >= 0 && posi < this->height;
+    }
+
+    return isValid;
+}
+
+bool LEDDisplay::validLength(int startPosi, int num, bool checkWidth) {
+    bool isValid;
+
+    if(checkWidth) {
+        isValid = this->validPosi(startPosi, true) && startPosi + num <= this->width;
+    }
+    else {
+        isValid = this->validPosi(startPosi) && startPosi + num <= this->height;
+    }
+
+    return isValid;
+}

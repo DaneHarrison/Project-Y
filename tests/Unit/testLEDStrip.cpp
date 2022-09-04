@@ -3,10 +3,12 @@
 #include "../catch.hpp"
 
 TEST_CASE("Basic LEDStrip test cases") {
-    SECTION("Testing default values") {
-        LEDStrip *testStrip;
-        LED ***testDisplay;
+    LED *testLED = new LED();
+    LEDStrip *altTestStrip;
+    LEDStrip *testStrip;
+    LED ***testDisplay;
 
+    SECTION("Testing default values") {
         testStrip = new LEDStrip(5);
         testDisplay = testStrip->getDisplay();
 
@@ -21,10 +23,6 @@ TEST_CASE("Basic LEDStrip test cases") {
     }
 
     SECTION("Testing changing a single LED") {
-        LED *testLED = new LED();
-        LEDStrip *testStrip;
-        LED ***testDisplay;
-        
         testStrip = new LEDStrip(4);
         testLED->setRGB(5, 6, 7);
         testStrip->updateLEDs(0, 1, 1, testLED);
@@ -59,7 +57,7 @@ TEST_CASE("Basic LEDStrip test cases") {
         }
 
 
-        LEDStrip *altTestStrip = new LEDStrip(4);
+        altTestStrip = new LEDStrip(4);
         altTestStrip->updateLEDs(0, 1, 1, testLED);
         testStrip->updateDisplay(altTestStrip->getHeight(), altTestStrip->getWidth(), altTestStrip->getDisplay());
         testDisplay = testStrip->getDisplay();
@@ -95,11 +93,12 @@ TEST_CASE("Basic LEDStrip test cases") {
 }
 
 TEST_CASE("More complex LEDStrip test cases") {
-    SECTION("Tests modifying multiple LEDs") {
-        LED *testLED = new LED();
-        LEDStrip *testStrip;
-        LED ***testDisplay;
-        
+    LED *testLED = new LED();
+    LEDStrip *altTestStrip;
+    LEDStrip *testStrip;
+    LED ***testDisplay;
+
+    SECTION("Tests modifying multiple LEDs") {        
         testStrip = new LEDStrip(5);
         testLED->setRGB(5, 6, 7);
         testStrip->updateLEDs(0, 1, 1, testLED);
@@ -138,7 +137,7 @@ TEST_CASE("More complex LEDStrip test cases") {
         }
 
 
-        LEDStrip *altTestStrip = new LEDStrip(5);
+        altTestStrip = new LEDStrip(5);
         altTestStrip->updateLEDs(0, 1, 1, testLED);
         altTestStrip->updateLEDs(0, 3, 2, testLED);
         testStrip->updateDisplay(altTestStrip->getHeight(), altTestStrip->getWidth(), altTestStrip->getDisplay());
@@ -196,10 +195,6 @@ TEST_CASE("More complex LEDStrip test cases") {
     }
 
     SECTION("Tests modifying all LEDs when there is an even amount") {
-        LED *testLED = new LED();
-        LEDStrip *testStrip;
-        LED ***testDisplay;
-        
         testStrip = new LEDStrip(4);
         testLED->setRGB(5, 6, 7);
         testStrip->updateLEDs(0, 0, 4, testLED);
@@ -228,7 +223,7 @@ TEST_CASE("More complex LEDStrip test cases") {
         }
 
 
-        LEDStrip *altTestStrip = new LEDStrip(4);
+        altTestStrip = new LEDStrip(4);
         altTestStrip->updateLEDs(0, 0, 4, testLED);
         testStrip->updateDisplay(altTestStrip->getHeight(), altTestStrip->getWidth(), altTestStrip->getDisplay());
         testDisplay = testStrip->getDisplay();
@@ -282,10 +277,6 @@ TEST_CASE("More complex LEDStrip test cases") {
     }
 
     SECTION("Tests modifying all LEDs when there is an odd amount") {
-        LED *testLED = new LED();
-        LEDStrip *testStrip;
-        LED ***testDisplay;
-        
         testStrip = new LEDStrip(7);
         testLED->setRGB(5, 6, 7);
         testStrip->updateLEDs(0, 0, 7, testLED);
@@ -314,7 +305,7 @@ TEST_CASE("More complex LEDStrip test cases") {
         }
 
 
-        LEDStrip *altTestStrip = new LEDStrip(7);
+        altTestStrip = new LEDStrip(7);
         altTestStrip->updateLEDs(0, 0, 7, testLED);
         testStrip->updateDisplay(altTestStrip->getHeight(), altTestStrip->getWidth(), altTestStrip->getDisplay());
         testDisplay = testStrip->getDisplay();
@@ -373,8 +364,6 @@ TEST_CASE("More complex LEDStrip test cases") {
     SECTION("Tests setting all LEDs differently") {
         LED *first = new LED();
         LED *second = new LED();
-        LEDStrip *testStrip;
-        LED ***testDisplay;
 
         testStrip = new LEDStrip(2);
         first->setRGB(5, 6, 7);
@@ -393,7 +382,7 @@ TEST_CASE("More complex LEDStrip test cases") {
         REQUIRE(testDisplay[1][0]->getGreen() == 11);
         REQUIRE(testDisplay[1][0]->getBlue() == 12);
 
-        LEDStrip *altTestStrip = new LEDStrip(2);
+        altTestStrip = new LEDStrip(2);
         altTestStrip->updateLEDs(0, 0, 1, second);
         altTestStrip->updateLEDs(0, 1, 1, first);
 
@@ -413,11 +402,13 @@ TEST_CASE("More complex LEDStrip test cases") {
 }
 
 TEST_CASE("Edge LEDStrip test cases") {
-    SECTION("Tests modifying a strip when a non zero width is specified") {
-        LED *testLED = new LED();
-        LEDStrip *testStrip;
-        LED ***testDisplay;
-            
+    LED *testLED = new LED();
+    LEDStrip *altTestStrip;
+    LEDStrip *testStrip;
+    LED ***altTestDisplay;
+    LED ***testDisplay;
+
+    SECTION("Tests modifying a strip when a non zero width is specified") {            
         testStrip = new LEDStrip(8);
         testLED->setRGB(5, 6, 7);
         testStrip->updateLEDs(2, 0, 1, testLED);
@@ -436,11 +427,7 @@ TEST_CASE("Edge LEDStrip test cases") {
         }
     }
 
-    SECTION("Tests modifying a returned display") {
-        LED *testLED = new LED();
-        LEDStrip *testStrip;
-        LED ***testDisplay;
-        
+    SECTION("Tests modifying a returned display") {        
         testStrip = new LEDStrip(3);
         testLED->setRGB(5, 6, 7);
         testDisplay = testStrip->getDisplay();
@@ -462,10 +449,6 @@ TEST_CASE("Edge LEDStrip test cases") {
     }
 
     SECTION("Tests modifying only the first LED in the strip") {
-        LED *testLED = new LED();
-        LEDStrip *testStrip;
-        LED ***testDisplay;
-        
         testStrip = new LEDStrip(6);
         testLED->setRGB(5, 6, 7);
         testStrip->updateLEDs(0, 0, 1, testLED);
@@ -497,7 +480,7 @@ TEST_CASE("Edge LEDStrip test cases") {
         }
 
 
-        LEDStrip *altTestStrip = new LEDStrip(6);
+        altTestStrip = new LEDStrip(6);
         altTestStrip->updateLEDs(0, 0, 1, testLED);
         testStrip->updateDisplay(altTestStrip->getHeight(), altTestStrip->getWidth(), altTestStrip->getDisplay());
         testDisplay = testStrip->getDisplay();
@@ -529,10 +512,6 @@ TEST_CASE("Edge LEDStrip test cases") {
     }
 
     SECTION("Tests modifying only the last LED in the strip") {
-        LED *testLED = new LED();
-        LEDStrip *testStrip;
-        LED ***testDisplay;
-        
         testStrip = new LEDStrip(3);
         testLED->setRGB(5, 6, 7);
         testStrip->updateLEDs(0, 2, 1, testLED);
@@ -564,7 +543,7 @@ TEST_CASE("Edge LEDStrip test cases") {
         }
 
 
-        LEDStrip *altTestStrip = new LEDStrip(3);
+        altTestStrip = new LEDStrip(3);
         altTestStrip->updateLEDs(0, 2, 1, testLED);
         testStrip->updateDisplay(altTestStrip->getHeight(), altTestStrip->getWidth(), altTestStrip->getDisplay());
         testDisplay = testStrip->getDisplay();
@@ -595,17 +574,102 @@ TEST_CASE("Edge LEDStrip test cases") {
         }
     }
 
-    //set display with too small of values
+    SECTION("Tests updating the strip with a smaller display") {
+        testStrip = new LEDStrip(10);
+        testLED->setRGB(15, 255, 13);
 
-    //set with only 1
+        LED ***altTestDisplay = new LED**[2];
+        altTestDisplay[0] = new LED*[1];
+        altTestDisplay[1] = new LED*[1];
+        altTestDisplay[0][0] = testLED;
+        altTestDisplay[1][0] = testLED;
+        
+        testStrip->updateDisplay(2, 1, altTestDisplay);
+        testDisplay = testStrip->getDisplay();
+
+        REQUIRE(testStrip->getHeight() == 10);
+        REQUIRE(testStrip->getWidth() == 1);
+        
+        REQUIRE(testDisplay[0][0]->getRed() == 15);
+        REQUIRE(testDisplay[0][0]->getGreen() == 255);
+        REQUIRE(testDisplay[0][0]->getBlue() == 13);
+        REQUIRE(testDisplay[1][0]->getRed() == 15);
+        REQUIRE(testDisplay[1][0]->getGreen() == 255);
+        REQUIRE(testDisplay[1][0]->getBlue() == 13);
+        for(int i = 2; i < 10; i++) {
+            REQUIRE(testDisplay[i][0]->getRed() == 0);
+            REQUIRE(testDisplay[i][0]->getGreen() == 0);
+            REQUIRE(testDisplay[i][0]->getBlue() == 0);
+        }
+    }
+
+    SECTION("Tests an LED strip with only one LED") {
+        testStrip = new LEDStrip(1);
+        testDisplay = testStrip->getDisplay();
+
+        REQUIRE(testStrip->getHeight() == 1);
+        REQUIRE(testStrip->getWidth() == 1);
+        
+        REQUIRE(testDisplay[0][0]->getRed() == 0);
+        REQUIRE(testDisplay[0][0]->getGreen() == 0);
+        REQUIRE(testDisplay[0][0]->getBlue() == 0);
+
+
+        testStrip->turnOff();
+        testDisplay = testStrip->getDisplay();
+        REQUIRE(testStrip->getHeight() == 1);
+        REQUIRE(testStrip->getWidth() == 1);
+        
+        REQUIRE(testDisplay[0][0]->getRed() == 0);
+        REQUIRE(testDisplay[0][0]->getGreen() == 0);
+        REQUIRE(testDisplay[0][0]->getBlue() == 0);
+
+
+        testStrip->copyDisplayElement(0, 0);
+        testDisplay = testStrip->getDisplay();
+        REQUIRE(testStrip->getHeight() == 1);
+        REQUIRE(testStrip->getWidth() == 1);
+        
+        REQUIRE(testDisplay[0][0]->getRed() == 0);
+        REQUIRE(testDisplay[0][0]->getGreen() == 0);
+        REQUIRE(testDisplay[0][0]->getBlue() == 0);
+
+
+        testLED->setRGB(90, 80, 0);
+        testStrip->updateLEDs(0, 0, 1, testLED);
+        testDisplay = testStrip->getDisplay();
+
+        REQUIRE(testStrip->getHeight() == 1);
+        REQUIRE(testStrip->getWidth() == 1);
+        
+        REQUIRE(testDisplay[0][0]->getRed() == 90);
+        REQUIRE(testDisplay[0][0]->getGreen() == 80);
+        REQUIRE(testDisplay[0][0]->getBlue() == 0);
+
+
+        testLED->setRGB(0, 1, 0);
+        altTestDisplay = new LED**[1];
+        altTestDisplay[0] = new LED*[1];
+        altTestDisplay[0][0] = testLED;
+        testStrip->updateDisplay(1, 1, altTestDisplay);
+        testDisplay = testStrip->getDisplay();
+
+        REQUIRE(testStrip->getHeight() == 1);
+        REQUIRE(testStrip->getWidth() == 1);
+        
+        REQUIRE(testDisplay[0][0]->getRed() == 0);
+        REQUIRE(testDisplay[0][0]->getGreen() == 1);
+        REQUIRE(testDisplay[0][0]->getBlue() == 0);
+    }
 }
 
 TEST_CASE("Empty LEDStrip test cases") {
+    LED *testLED = new LED();
+    LEDStrip *testStrip;
+    LED ***altTestDisplay;
+    LED ***testDisplay;
+
     SECTION("Tests using null values to update individual LEDs in a strip") {
-        LED *testLED = new LED();
-        LEDStrip *testStrip;
-        LED ***testDisplay;
-        
         testStrip = new LEDStrip(3);
         testLED->setRGB(5, 6, 7);
         testStrip->updateLEDs(0, 0, 3, testLED);
@@ -637,11 +701,7 @@ TEST_CASE("Empty LEDStrip test cases") {
         }
     }
 
-    SECTION("Tests using null values to update the strip") {
-        LED *testLED = new LED();
-        LEDStrip *testStrip;
-        LED ***testDisplay;
-        
+    SECTION("Tests using null values to update the strip") {        
         testStrip = new LEDStrip(3);
         testLED->setRGB(5, 6, 7);
         testStrip->updateLEDs(0, 0, 3, testLED);
@@ -658,7 +718,7 @@ TEST_CASE("Empty LEDStrip test cases") {
         }
 
 
-        LED ***altTestDisplay = new LED**[3];
+        altTestDisplay = new LED**[3];
         altTestDisplay[0] = new LED*[1];
         altTestDisplay[1] = new LED*[1];
         altTestDisplay[2] = new LED*[1];
@@ -700,12 +760,166 @@ TEST_CASE("Empty LEDStrip test cases") {
 }
 
 TEST_CASE("Invalid LEDStrip test cases") {
-    SECTION("Tests setting invalid lengths of a strip") {
+    LED *testLED = new LED();
+    LEDStrip *testStrip;
+    LED ***testAltDisplay;
+    LED ***testDisplay;
 
+    SECTION("Tests modifying invalid lengths of a strip") {
+        testLED->setRGB(5, 6, 7);
+        testStrip = new LEDStrip(3);
+        testAltDisplay = new LED**[5];
+        for(int i = 0; i < 5; i++) {
+            testAltDisplay[i] = new LED*[1];
+            testAltDisplay[i][0] = testLED;
+        }
+
+        testStrip->updateDisplay(5, 1, testAltDisplay);
+        testDisplay = testStrip->getDisplay();
+
+        REQUIRE(testStrip->getHeight() == 3);
+        REQUIRE(testStrip->getWidth() == 1);
+
+        for(int i = 0; i < 3; i++) {
+            REQUIRE(testDisplay[i][0]->getRed() == 0);
+            REQUIRE(testDisplay[i][0]->getGreen() == 0);
+            REQUIRE(testDisplay[i][0]->getBlue() == 0);
+        }
+
+
+        testStrip->updateLEDs(100, 0, 300, testLED);
+        testDisplay = testStrip->getDisplay();
+
+        REQUIRE(testStrip->getHeight() == 3);
+        REQUIRE(testStrip->getWidth() == 1);
+
+        for(int i = 0; i < 3; i++) {
+            REQUIRE(testDisplay[i][0]->getRed() == 0);
+            REQUIRE(testDisplay[i][0]->getGreen() == 0);
+            REQUIRE(testDisplay[i][0]->getBlue() == 0);
+        }
+
+
+        testStrip->updateLEDs(0, 0, 3, testLED);
+        testLED->setRGB(100, 100, 100);
+        testStrip->updateLEDs(100, 0, 300, testLED);
+        testDisplay = testStrip->getDisplay();
+
+        REQUIRE(testStrip->getHeight() == 3);
+        REQUIRE(testStrip->getWidth() == 1);
+
+        for(int i = 0; i < 3; i++) {
+            REQUIRE(testDisplay[i][0]->getRed() == 5);
+            REQUIRE(testDisplay[i][0]->getGreen() == 6);
+            REQUIRE(testDisplay[i][0]->getBlue() == 7);
+        }
     }
 
     SECTION("Tests trying to access and modify invalid position of a strip") {
-        //too large
-        //negative
+        testLED->setRGB(5, 10, 15);
+        testStrip = new LEDStrip(11);
+        testStrip->copyDisplayElement(-1, 5);
+        testDisplay = testStrip->getDisplay();
+
+        REQUIRE(testStrip->getHeight() == 11);
+        REQUIRE(testStrip->getWidth() == 1);
+
+        for(int i = 0; i < 11; i ++) {
+            REQUIRE(testDisplay[i][0]->getRed() == 0);
+            REQUIRE(testDisplay[i][0]->getGreen() == 0);
+            REQUIRE(testDisplay[i][0]->getBlue() == 0);
+        }
+
+
+        testStrip->copyDisplayElement(5, -1);
+        testDisplay = testStrip->getDisplay();
+
+        REQUIRE(testStrip->getHeight() == 11);
+        REQUIRE(testStrip->getWidth() == 1);
+
+        for(int i = 0; i < 11; i ++) {
+            REQUIRE(testDisplay[i][0]->getRed() == 0);
+            REQUIRE(testDisplay[i][0]->getGreen() == 0);
+            REQUIRE(testDisplay[i][0]->getBlue() == 0);
+        }
+
+
+        testStrip->copyDisplayElement(100, 5);
+        testDisplay = testStrip->getDisplay();
+
+        REQUIRE(testStrip->getHeight() == 11);
+        REQUIRE(testStrip->getWidth() == 1);
+
+        for(int i = 0; i < 11; i ++) {
+            REQUIRE(testDisplay[i][0]->getRed() == 0);
+            REQUIRE(testDisplay[i][0]->getGreen() == 0);
+            REQUIRE(testDisplay[i][0]->getBlue() == 0);
+        }
+
+
+        testStrip->copyDisplayElement(5, 100);
+        testDisplay = testStrip->getDisplay();
+
+        REQUIRE(testStrip->getHeight() == 11);
+        REQUIRE(testStrip->getWidth() == 1);
+
+        for(int i = 0; i < 11; i ++) {
+            REQUIRE(testDisplay[i][0]->getRed() == 0);
+            REQUIRE(testDisplay[i][0]->getGreen() == 0);
+            REQUIRE(testDisplay[i][0]->getBlue() == 0);
+        }
+
+
+        testStrip->updateLEDs(0, -1, 11, testLED);
+        testDisplay = testStrip->getDisplay();
+
+        REQUIRE(testStrip->getHeight() == 11);
+        REQUIRE(testStrip->getWidth() == 1);
+
+        for(int i = 0; i < 11; i ++) {
+            REQUIRE(testDisplay[i][0]->getRed() == 0);
+            REQUIRE(testDisplay[i][0]->getGreen() == 0);
+            REQUIRE(testDisplay[i][0]->getBlue() == 0);
+        }
+
+
+        testStrip->updateLEDs(0, 100, 11, testLED);
+        testDisplay = testStrip->getDisplay();
+
+        REQUIRE(testStrip->getHeight() == 11);
+        REQUIRE(testStrip->getWidth() == 1);
+
+        for(int i = 0; i < 11; i ++) {
+            REQUIRE(testDisplay[i][0]->getRed() == 0);
+            REQUIRE(testDisplay[i][0]->getGreen() == 0);
+            REQUIRE(testDisplay[i][0]->getBlue() == 0);
+        }
+
+
+        testStrip->updateLEDs(-1, 0, 11, testLED);
+        testDisplay = testStrip->getDisplay();
+
+        REQUIRE(testStrip->getHeight() == 11);
+        REQUIRE(testStrip->getWidth() == 1);
+
+        for(int i = 0; i < 11; i ++) {
+            REQUIRE(testDisplay[i][0]->getRed() == 5);
+            REQUIRE(testDisplay[i][0]->getGreen() == 10);
+            REQUIRE(testDisplay[i][0]->getBlue() == 15);
+        }
+
+
+        testLED->setRGB(0, 0, 0);
+        testStrip->updateLEDs(100, 0, 11, testLED);
+        testDisplay = testStrip->getDisplay();
+
+        REQUIRE(testStrip->getHeight() == 11);
+        REQUIRE(testStrip->getWidth() == 1);
+
+        for(int i = 0; i < 11; i ++) {
+            REQUIRE(testDisplay[i][0]->getRed() == 0);
+            REQUIRE(testDisplay[i][0]->getGreen() == 0);
+            REQUIRE(testDisplay[i][0]->getBlue() == 0);
+        }
     }
 }

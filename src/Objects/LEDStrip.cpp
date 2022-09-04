@@ -1,6 +1,6 @@
 #include "LEDStrip.h"
 #include "LED.h"
-//mention that a height must be greater than 0 otherwise problems occur
+
 LEDStrip::LEDStrip(int height) : LEDDisplay(height, 1){
     this->strip = new LED*[height];
     
@@ -43,8 +43,8 @@ LED ***LEDStrip::getDisplay() {
 
 void LEDStrip::updateLEDs(int xPosi, int yPosi, int num, LED *srcLED) {
     int red, green, blue;
-
-    if(srcLED) {
+    
+    if(srcLED && this->validLength(yPosi, num)) {
         red = srcLED->getRed();
         green = srcLED->getGreen();
         blue = srcLED->getBlue();
@@ -58,21 +58,27 @@ void LEDStrip::updateLEDs(int xPosi, int yPosi, int num, LED *srcLED) {
 void LEDStrip::updateDisplay(int height, int width, LED ***newDisplay) {
     int red, green, blue;
 
-    for(int i = 0; i < height && newDisplay; i++) {
-        if(newDisplay[i] && newDisplay[i][0]) {
-            red = newDisplay[i][0]->getRed();
-            green = newDisplay[i][0]->getGreen();
-            blue = newDisplay[i][0]->getBlue();
+    if(newDisplay && this->validLength(0, height - 1)) {
+        for(int i = 0; i < height; i++) {
+            if(newDisplay[i] && newDisplay[i][0]) {
+                red = newDisplay[i][0]->getRed();
+                green = newDisplay[i][0]->getGreen();
+                blue = newDisplay[i][0]->getBlue();
 
-            this->strip[i]->setRGB(red, green, blue);
+                this->strip[i]->setRGB(red, green, blue);
+            }
         }
     }
 }
 
 void LEDStrip::copyDisplayElement(int src, int dest) {
-    int red = this->strip[src]->getRed();
-    int green = this->strip[src]->getGreen();
-    int blue = this->strip[src]->getBlue();
+    int red, green, blue;
 
-    this->strip[dest]->setRGB(red, green, blue);
+    if(this->validPosi(src) && this->validPosi(dest)) {
+        red = this->strip[src]->getRed();
+        green = this->strip[src]->getGreen();
+        blue = this->strip[src]->getBlue();
+
+        this->strip[dest]->setRGB(red, green, blue);
+    }
 }

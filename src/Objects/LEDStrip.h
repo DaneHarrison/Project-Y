@@ -3,6 +3,7 @@
 // Author: Dane
 //
 // Represents an addressible LED Strip (single sequential line of LEDs)
+// Note: its initialized height must be greater than 0
 // --------------------------------
 #pragma once
 #include "LEDDisplay.h"
@@ -15,10 +16,13 @@ public:
     LEDStrip(int height);
     ~LEDStrip();
 
+    // --------------------------------
+    // Turns off the entire strip
+    // --------------------------------
     void turnOff();
 
     // --------------------------------
-    // Fetches the current display (getter)
+    // Fetches the current display
     //
     // Returns:
     // A 2D array of LEDs that make up the current display
@@ -30,10 +34,10 @@ public:
     // Updates individual LEDs 
     //
     // Parameters:
-    // posi: the position of the LEDs we'd like to update [0 - length)
-    // intVal: unused
-    // num: the position of the LEDs we'd like to update [0 - length)
-    // srcLED: the new LED we'd like to insert into our display
+    // height: the position of the LEDs we'd like to update [0 - length)
+    // width: unused
+    // num: the number of LEDs we'd like to update to match our source [1 - length]
+    // srcLED: the LED we'd like to use to update our display
     // --------------------------------
     void updateLEDs(int height, int width, int num, LED *srcLED);
     
@@ -42,10 +46,19 @@ public:
     // Copies an individual LED's contents to another
     //
     // Parameters:
-    // src: the LED in the display we'd like to copy
-    // dest: the LED in the display we'd like to modify
+    // src: the position of the LED in the display we'd like to copy [0, length)
+    // dest: the position of the LED in the display we'd like to modify [0, length)
     // --------------------------------
     void copyDisplayElement(int src, int dest);
 
+    // --------------------------------
+    // Overwrites the current display using initialized LEDs.  Note that null values are ignored 
+    // and smaller displays can be used to update portions of the display
+    //
+    // Parameters:
+    // height: the height of the new display
+    // width: the width of the new display
+    // newDisplay: the input display we'd like to use to update our current display
+    // --------------------------------
     void updateDisplay(int height, int width, LED ***newDisplay);
 };

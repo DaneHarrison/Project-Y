@@ -10,8 +10,8 @@ class LED;
 
 class LEDDisplay {
 private:
-    int height;
-    int width;
+    int height; //the height of the display
+    int width;  //the width of the display
 
 public:
     LEDDisplay(int height, int width);
@@ -36,13 +36,13 @@ public:
 
 
     // --------------------------------
-    // Turns off the entire display
+    // Turns off the display
     // --------------------------------
     virtual void turnOff() = 0;
 
 
     // --------------------------------
-    // Fetches the current display (getter)
+    // Fetches the current display
     //
     // Returns:
     // A copy of the 2D array of LEDs that make up the current display
@@ -63,7 +63,7 @@ public:
 
 
     // --------------------------------
-    // Copies LED contents to others
+    // Copies a portion of the display's contents to another portion
     //
     // Parameters:
     // src: the LED location in the display we'd like to copy
@@ -73,13 +73,40 @@ public:
     
     
     // --------------------------------
-    // Overwrites the current display (if sizes and contents are compatible - no nullptrs and same size)
+    // Overwrites the current display using initialized LEDs.  Note that null values are ignored 
+    // and smaller displays can be used to update portions of the display
     //
+    // Parameters:
+    // height: the height of the new display
+    // width: the width of the new display
     // newDisplay: the input display we'd like to use to update our current display
     // --------------------------------
     virtual void updateDisplay(int height, int width, LED ***newDisplay) = 0;
-
-// protected:
-//     bool validateSize(int, int, LED***);
-//     bool validateEntries(int, int, LED***);
+    
+    
+    // --------------------------------
+    // Validates a position in the display 
+    //
+    // Parameters:
+    // posi: the position we'd like to check
+    // checkWidth: determines whether we are checking against the width or height (checks height by default)
+    //
+    // Returns:
+    // A boolean representing whether if the checked position was valid
+    // --------------------------------
+    bool validPosi(int posi, bool checkWidth = false);
+    
+    
+    // --------------------------------
+    // Validates the display has sufficient size for a multi-LED update 
+    //
+    // Parameters:
+    // startPosi: the position we'd like to start our check from (the position of the first LED)
+    // num: the number of LED's we'd like to update
+    // checkWidth: determines whether we are checking against the width or height (checks height by default)
+    //
+    // Returns:
+    // A boolean representing if the checked length was valid
+    // --------------------------------
+    bool validLength(int startPosi, int num, bool checkWidth = false);
 };

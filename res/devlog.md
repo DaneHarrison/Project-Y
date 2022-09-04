@@ -74,8 +74,8 @@ Dane (4 hrs)
 
 September 3:  
 Dane (5 hrs)  
-- Used TDD to develope most of LEDStrip classes (invalid and edge cases remaining)
-- Improved LEDDisplay interface (better encapsulation, DRY and easier to read)
+- Used TDD to develop most of LEDStrip classes (invalid and edge cases remaining)
+- Improved LEDDisplay classes (better encapsulation, DRY and easier to read)
 - Learnt can call delete from constructor but problems arise if instance variables are used or a non default deconstructor is used
 
 <br>

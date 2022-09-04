@@ -2,29 +2,58 @@
 #include "../../src/Objects/LED.h"
 #include "../catch.hpp"
 
-LED ***create5By5LEDGrid(bool); //test where not symmetrical grid
+//LED ***create5By5LEDGrid(bool); //test where not symmetrical grid
 
 TEST_CASE("Basic LEDGrid test cases") {
-    // LEDGrid *testGrid;
-    // LED ***testDisplay;
+    LEDGrid *testGrid;
+    LED ***testDisplay;
 
-    // SECTION("Testing default values") {
-    //     testGrid = new LEDGrid(5, 5);
-    //     testDisplay = testGrid->getDisplay();
-        
-    //     REQUIRE(testGrid->getHeight() == 5);
-    //     REQUIRE(testGrid->getWidth() == 5);
-
-    //     for(int i = 0; i < 5; i++) {
-    //         for(int j = 0; j < 5; j++) {
-    //             REQUIRE(dynamic_cast<LED*>(testDisplay[i][j]));
-    //             REQUIRE(testDisplay[i][j]->getRed() == 0);
-    //             REQUIRE(testDisplay[i][j]->getGreen() == 0);
-    //             REQUIRE(testDisplay[i][j]->getBlue() == 0);
-    //         }
-    //     }
-    // }
+    SECTION("Testing default values") {
+    }
 }
+        // testGrid = new LEDGrid(5, 5);
+        // testDisplay = testGrid->getDisplay();
+        
+        // REQUIRE(testGrid->getHeight() == 5);
+        // REQUIRE(testGrid->getWidth() == 5);
+
+        // for(int i = 0; i < 5; i++) {
+        //     for(int j = 0; j < 5; j++) {
+        //         REQUIRE(testDisplay[i][j]->getRed() == 0);
+        //         REQUIRE(testDisplay[i][j]->getGreen() == 0);
+        //         REQUIRE(testDisplay[i][j]->getBlue() == 0);
+        //     }
+        // }
+
+
+        // testGrid = new LEDGrid(7, 3);
+        // testDisplay = testGrid->getDisplay();
+        
+        //REQUIRE(testGrid->getHeight() == 7);
+        //REQUIRE(testGrid->getWidth() == 3);
+
+        // for(int i = 0; i < 7; i++) {
+        //     for(int j = 0; j < 3; j++) {
+        //         REQUIRE(testDisplay[i][j]->getRed() == 0);
+        //         REQUIRE(testDisplay[i][j]->getGreen() == 0);
+        //         REQUIRE(testDisplay[i][j]->getBlue() == 0);
+        //     }
+        // }
+
+
+        // testGrid = new LEDGrid(2, 20);
+        // testDisplay = testGrid->getDisplay();
+        
+        // REQUIRE(testGrid->getHeight() == 2);
+        // REQUIRE(testGrid->getWidth() == 20);
+
+        // for(int i = 0; i < 2; i++) {
+        //     for(int j = 0; j < 20; j++) {
+        //         REQUIRE(testDisplay[i][j]->getRed() == 0);
+        //         REQUIRE(testDisplay[i][j]->getGreen() == 0);
+        //         REQUIRE(testDisplay[i][j]->getBlue() == 0);
+        //     }
+        // }
 //     SECTION("Testing changing entire display") {
 //         LED ***activeDisplay = create5By5LEDGrid(false);
 //         testGrid = new LEDGrid(5, 5);
