@@ -29,25 +29,23 @@ public:
     // --------------------------------
     LED ***getDisplay();
 
-
     // --------------------------------
     // Updates individual LEDs 
     //
     // Parameters:
-    // height: the position of the LEDs we'd like to update [0 - length)
-    // width: unused
+    // xPosi: unused
+    // yPosi: the vertical position of the LEDs we'd like to update [0 - length)
     // num: the number of LEDs we'd like to update to match our source [1 - length]
     // srcLED: the LED we'd like to use to update our display
     // --------------------------------
-    void updateLEDs(int height, int width, int num, LED *srcLED);
-    
+    void updateLEDs(int xPosi, int yPosi, int num, LED *srcLED);
     
     // --------------------------------
     // Copies an individual LED's contents to another
     //
     // Parameters:
     // src: the position of the LED in the display we'd like to copy [0, length)
-    // dest: the position of the LED in the display we'd like to modify [0, length)
+    // dest: the position of the LED in the display we'd like to amend [0, length)
     // --------------------------------
     void copyDisplayElement(int src, int dest);
 

@@ -3,14 +3,17 @@
 #include "LEDGrid.h"
 #include "LED.h"
 
+SolidPattern::SolidPattern(int red, int green, int blue) {
+    this->fill = new LED();
+    this->fill->setRGB(red, green, blue);
+}
+
 LED ***SolidPattern::usePattern(int frequency, LEDDisplay *display) {
-    LED ***newDisplay = display->getDisplay(); //this is broken
+    display->updateLEDs(0, 0, display->getHeight(), this->fill);
 
     for(int i = 0; i < display->getWidth(); i ++) {
-        for(int j = 0; j < display->getHeight(); j++) {
-            newDisplay[i][j]->setRGB(this->RED, this->GREEN, this->BLUE);
-        }
+        display->copyDisplayElement(0, i);
     }
 
-    return newDisplay;
+    return display->getDisplay();
 }

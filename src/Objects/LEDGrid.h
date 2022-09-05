@@ -17,7 +17,7 @@ public:
     ~LEDGrid();
 
     // --------------------------------
-    // Turns off the entire strip
+    // Turns off the entire grid
     // --------------------------------
     void turnOff();
 
@@ -33,23 +33,21 @@ public:
     // Updates individual LEDs (vertically) 
     //
     // Parameters:
-    // height: the position of the LEDs we'd like to update [0 - length)
-    // width: unused
+    // xPosi: the horizontal position of the LEDs we'd like to update [0 - length)
+    // yPosi: the vertical position of the LEDs we'd like to update [0 - length)
     // num: the number of LEDs we'd like to update to match our source [1 - length]
     // srcLED: the LED we'd like to use to update our display
     // --------------------------------
-    void updateLEDs(int height, int width, int num, LED *srcLED);
+    void updateLEDs(int xPosi, int yPosi, int num, LED *srcLED);
 
-
-// --------------------------------
+    // --------------------------------
     // Copies a row of LEDs to another
     //
     // Parameters:
     // src: the position of the LED row in the display we'd like to copy [0, length)
-    // dest: the position of the LED row in the display we'd like to modify [0, length)
+    // dest: the position of the LED row in the display we'd like to amend [0, length)
     // --------------------------------
     void copyDisplayElement(int src, int dest);
-
 
     // --------------------------------
     // Overwrites the current display using initialized LEDs.  Note that null values are ignored 
@@ -61,4 +59,16 @@ public:
     // newDisplay: the input display we'd like to use to update our current display
     // --------------------------------
     void updateDisplay(int height, int width, LED ***newDisplay);
+
+    // --------------------------------
+    // Returns a LEDStrip from the grid.  Note changes made to the returned strip
+    // will update the grid
+    //
+    // Parameters:
+    // posi: the LEDStrip we'd like to access and modify
+    //
+    // Returns:
+    // An LEDStrip corresponding to the vertical strip from the grid we'd like to modify
+    // --------------------------------
+    LEDStrip *getStrip(int posi);
 };

@@ -16,30 +16,26 @@ private:
 public:
     LEDDisplay(int height, int width);
 
-
     // --------------------------------
-    // Fetches the display's height (getter)
+    // Fetches the display's height
     //
     // Returns:
     // An integer that refers to the displays height
     // --------------------------------
     virtual int getHeight();
 
-
     // --------------------------------
-    // Fetches the current width (getter)
+    // Fetches the current width
     //
     // Returns:
     // An integer that refers to the displays width
     // --------------------------------
     virtual int getWidth();
 
-
     // --------------------------------
     // Turns off the display
     // --------------------------------
     virtual void turnOff() = 0;
-
 
     // --------------------------------
     // Fetches the current display
@@ -48,29 +44,26 @@ public:
     // A copy of the 2D array of LEDs that make up the current display
     // --------------------------------
     virtual LED ***getDisplay() = 0;
-    
 
     // --------------------------------
     // Updates a range of LEDs
     //
     // Parameters:
-    // height: the height of the LEDs we'd like to start updating at
-    // width: the width of the LEDs we'd like to update
-    // num: the number of LEDs we'd like to update
-    // srcLED: the new LED we'd like to insert into our display
+    // xPosi: the horizontal position of the LEDs we'd like to update [0 - length)
+    // yPosi: the vertical position of the LEDs we'd like to update [0 - length)
+    // num: the number of LEDs we'd like to update to match our source [1 - length]
+    // srcLED: the LED we'd like to use to update our display
     // --------------------------------
-    virtual void updateLEDs(int height, int width, int num, LED *srcLED) = 0;
-
+    virtual void updateLEDs(int xPosi, int yPosi, int num, LED *srcLED) = 0;
 
     // --------------------------------
     // Copies a portion of the display's contents to another portion
     //
     // Parameters:
-    // src: the LED location in the display we'd like to copy
-    // dest: the LED location in the display we'd like to modify
+    // src: the location in the display we'd like to copy
+    // dest: the location in the display we'd like to amend
     // --------------------------------
     virtual void copyDisplayElement(int src, int dest) = 0;
-    
     
     // --------------------------------
     // Overwrites the current display using initialized LEDs.  Note that null values are ignored 
@@ -83,7 +76,6 @@ public:
     // --------------------------------
     virtual void updateDisplay(int height, int width, LED ***newDisplay) = 0;
     
-    
     // --------------------------------
     // Validates a position in the display 
     //
@@ -94,8 +86,7 @@ public:
     // Returns:
     // A boolean representing whether if the checked position was valid
     // --------------------------------
-    bool validPosi(int posi, bool checkWidth = false);
-    
+    bool validPosi(int posi, bool checkWidth = false); 
     
     // --------------------------------
     // Validates the display has sufficient size for a multi-LED update 

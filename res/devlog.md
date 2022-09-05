@@ -78,6 +78,20 @@ Dane (5 hrs)
 - Improved LEDDisplay classes (better encapsulation, DRY and easier to read)
 - Learnt can call delete from constructor but problems arise if instance variables are used or a non default deconstructor is used
 
+September 4:
+Dane (4 hrs)
+- Finished LEDStrip TDD
+- Updated LEDDisplay and LEDStrip documentation
+- Started LEDGrid tests
+- Revised the shirt assembly plans 
+
+Septemeber 5:  
+Dane (2 hrs) 
+- Finished LEDGrid TDD - currently total number of tests are 2334 assertions and 19 test cases
+- Updated LEDGrid documentation 
+- Revised the shirt assembly plans 
+- Adjusted SolidPattern to work with new LEDDisplay classes
+
 <br>
 <br>
 

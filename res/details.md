@@ -1,17 +1,17 @@
 ## Dimensions:
 - 1.3 cm between each strip
 - 1.2 cm between each led
-- each led has a size of 5x5 mm
-- an entire strip is close to 33 cm
+- Each led has a size of 5x5 mm
+- An entire strip is close to 33 cm
 - LED strip itself is 10mm wide
-- 35x20 leds
+- Grid is 25 wide 20 high
 
 <br>
 <hr>
 
 ## Electricity:
 - An individual LED can use up ot 60 mA (20mA at most for R, G and B respectively)
-- needs 42 000 maH for all 700 leds, plus arduino (note that its unlikely all LEDs will be in use at a given time)
+- needs 30 000 maH for all 500 leds, plus arduino (note that its unlikely all LEDs will be in use at a given time)
 - modify a fanny pack for power sources
     - https://www.etsy.com/ca/listing/778196545/ultralight-xpac-lunch-sack-removable
     - https://www.amazon.ca/MAXOAK-50000mAh-Portable-External-Notebook-Most/dp/B00YP823NA is 2520g around 500

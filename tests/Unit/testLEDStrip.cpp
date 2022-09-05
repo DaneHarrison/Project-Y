@@ -787,7 +787,7 @@ TEST_CASE("Invalid LEDStrip test cases") {
         }
 
 
-        testStrip->updateLEDs(100, 0, 300, testLED);
+        testStrip->updateLEDs(0, 0, 300, testLED);
         testDisplay = testStrip->getDisplay();
 
         REQUIRE(testStrip->getHeight() == 3);
@@ -802,7 +802,7 @@ TEST_CASE("Invalid LEDStrip test cases") {
 
         testStrip->updateLEDs(0, 0, 3, testLED);
         testLED->setRGB(100, 100, 100);
-        testStrip->updateLEDs(100, 0, 300, testLED);
+        testStrip->updateLEDs(0, 0, 300, testLED);
         testDisplay = testStrip->getDisplay();
 
         REQUIRE(testStrip->getHeight() == 3);
