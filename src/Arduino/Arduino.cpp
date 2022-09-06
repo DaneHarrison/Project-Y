@@ -42,5 +42,6 @@ void Arduino::updateLEDDisplay(LED ***newDisplay) {
         }
     }
 
+    //FastLED.clear();
     //FastLED.show();
 }

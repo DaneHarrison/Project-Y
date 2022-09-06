@@ -86,11 +86,14 @@ Dane (4 hrs)
 - Revised the shirt assembly plans 
 
 Septemeber 5:  
-Dane (2 hrs) 
+Dane (6 hrs) 
 - Finished LEDGrid TDD - currently total number of tests are 2334 assertions and 19 test cases
 - Updated LEDGrid documentation 
 - Revised the shirt assembly plans 
 - Adjusted SolidPattern to work with new LEDDisplay classes
+- Researched FTT and learnt how it sorta works - needs work though
+- Started FTTReader
+- Started Equalizer pattern
 
 <br>
 <br>
@@ -107,6 +110,9 @@ Dane (2 hrs)
     - add pattern range times (random between min and max)
     - add random pattern selection/pattern management logic
 
+    Patterns:
+    - sound wave: have logic for constructing up and down peaks depending on value last read from the mic
+    - mid double sided equalizer
 <br>
 
 # Review

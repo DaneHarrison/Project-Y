@@ -25,9 +25,9 @@
 
 ## Phase 2:
 7. <strike>Refactor and add data validation</strike>
-8. Distribute frequencies over LED vectors
+8. <strike>Distribute frequencies over LED vectors</strike>
 9. Add FTT Analysis
-10. Make reactive equalizer pattern strategy
+10. <strike>Make reactive equalizer pattern strategy</strike>
 
 ## Phase 3:
 11. 3D print case
