@@ -85,7 +85,7 @@ Dane (4 hrs)
 - Started LEDGrid tests
 - Revised the shirt assembly plans 
 
-Septemeber 5:  
+September 5:  
 Dane (6 hrs) 
 - Finished LEDGrid TDD - currently total number of tests are 2334 assertions and 19 test cases
 - Updated LEDGrid documentation 
@@ -94,6 +94,10 @@ Dane (6 hrs)
 - Researched FTT and learnt how it sorta works - needs work though
 - Started FTTReader
 - Started Equalizer pattern
+
+September 6:  
+Dane (1 hr)  
+- Replaced shirt diagram with an easier to read and follow version
 
 <br>
 <br>
