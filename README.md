@@ -1,37 +1,37 @@
+<div align=center>
+
 # Project-Y
-### Project Y is a display shirt that lights up to audio frequency   
+### Project Y is a display shirt that lights up to audio frequency  
+
+</div>
+<br>
+<br>
+
+<div align=right>
+
 ![A shirt that is lighting up to audio frequency](res/partyShirt.gif)
+</div>
 
 <br>
 <br>
+
+# Managing patterns:
+Using SOLID principles and the strategy design pattern, creating patterns is a relatively straighforward process:
+
+1. Make use of the [LEDDisplay](https://github.com/DaneHarrison/Project-Y/blob/main/src/Objects/LEDDisplay.h) classes to implement the [strategy base class](https://github.com/DaneHarrison/Project-Y/blob/main/src/Interfaces/PatternStrategy.h):
+     - [LEDGrid](https://github.com/DaneHarrison/Project-Y/blob/main/src/Objects/LEDGrid.h)
+     - [LEDStrip](https://github.com/DaneHarrison/Project-Y/blob/main/src/Objects/LEDStrip.cpp)
+
+2. Add strategy to [VisualizerLogic](https://github.com/DaneHarrison/Project-Y/blob/main/src/Logic/VisualizerLogic.h)
+
 <br>
-<br>
 
-### Build commands:
-     cmake -S [source] -B [build] ([] represents folders)
-     MSBuild.exe /build/path/from/above/ProjectName.sln
-     ProjectName.exe (again in their respected debug folder)
+# Build
 
-<br>
+### Commands:
+- ```cmake -S [source] -B [build] ([] represents folders)```
+- ```MSBuild.exe /build/path/from/above/ProjectName.sln```
+- ```ProjectName.exe (again in their respected debug folder)```
 
-# Development roadmap
-## Phase 1:
-1. <strike>Figure out unit testing in C++</strike>
-2. <strike>Bare minimum code implementation</strike>
-3. <strike>Static pattern</strike>
-4. <strike>Document current pitch</strike>
-5. <strike>3D model a prototype (shirt and animations in Blender)</strike>
-6. <strike>Requirement analysis (hardware and safety precautions)</strike>
-
-## Phase 2:
-7. <strike>Refactor and add data validation</strike>
-8. <strike>Distribute frequencies over LED vectors</strike>
-9. Add FTT Analysis
-10. <strike>Make reactive equalizer pattern strategy</strike>
-
-## Phase 3:
-11. 3D print case
-12. 3D print holder
-13. Product assembly
-14. sound wave pattern
-15. 2x2 pixel grid (integrate subpixels)
+### Physical:
+![physical design for Project Y](./res/diagram.png)
